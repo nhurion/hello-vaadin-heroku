@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="201d1216-fcbc-435e-a5b4-575d4483dbe3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/HelloWorld.java" afterPath="$PROJECT_DIR$/src/main/java/HelloWorld.java" />
     </list>
     <ignored path="hello-vaadin-heroku.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,19 +60,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="34" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.67275745">
+            <state line="29" column="34" selection-start="1099" selection-end="1099" vertical-scroll-proportion="-15.576923">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelloWorld.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="HelloWorld.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/HelloWorld.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="107" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
+            <state line="8" column="23" selection-start="235" selection-end="235" vertical-scroll-proportion="0.1910828">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,8 +105,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/eu/hurion/vaadin/HelloWorld.java" />
         <option value="$PROJECT_DIR$/Procfile" />
-        <option value="$PROJECT_DIR$/src/main/java/HelloWorld.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/HelloWorld.java" />
       </list>
     </option>
   </component>
@@ -511,19 +510,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/HelloWorld.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="107" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="29" column="34" selection-start="1099" selection-end="1099" vertical-scroll-proportion="-15.576923">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/HelloWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="34" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.67275745">
-          <folding />
+        <state line="8" column="23" selection-start="235" selection-end="235" vertical-scroll-proportion="0.1910828">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
