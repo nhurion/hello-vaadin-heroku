@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="201d1216-fcbc-435e-a5b4-575d4483dbe3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="hello-vaadin-heroku.iws" />
@@ -63,7 +64,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="26" selection-start="771" selection-end="771" vertical-scroll-proportion="0.47342193">
+            <state line="29" column="34" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.67275745">
               <folding />
             </state>
           </provider>
@@ -521,7 +522,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="26" selection-start="771" selection-end="771" vertical-scroll-proportion="0.47342193">
+        <state line="29" column="34" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.67275745">
           <folding />
         </state>
       </provider>
