@@ -14,5 +14,10 @@
             <artifactId>com.bsb.common.vaadin.embed</artifactId>
             <version>0.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin</artifactId>
+            <version>6.7.6</version>
+        </dependency>
     </dependencies>
 </project>
