@@ -18,7 +18,7 @@ Then push the application like this :
 
     git push heroku master
 
-And the application is up and running>
+And the application is up and running.
 
 
 As an example, this application is deployed on heroku and accessible at http://electric-meadow-7573.herokuapp.com
