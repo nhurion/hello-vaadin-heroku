@@ -10,11 +10,13 @@ Where tho go from here?
 -----------------------
 
 Simply clone this repository and assuming you have heroku correctly configured simply type
-> heroku create --stack cedar
+
+    heroku create --stack cedar
 
 Heroku will create your app and give you it's url.
 Then push the application like this :
-> git push heroku master
+
+    git push heroku master
 
 And the application is up and running>
 
