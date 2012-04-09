@@ -1,3 +1,5 @@
+package eu.hurion.hello.vaadin;
+
 import com.bsb.common.vaadin.embed.support.EmbedVaadin;
 
 

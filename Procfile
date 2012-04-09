@@ -1,1 +1,1 @@
-web:    java -cp target/classes:target/dependency/* HelloHeroku
+web:    java -cp target/classes:target/dependency/* eu.hurion.hello.vaadin.HelloHeroku

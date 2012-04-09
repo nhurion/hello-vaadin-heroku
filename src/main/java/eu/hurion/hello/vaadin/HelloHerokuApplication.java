@@ -1,3 +1,5 @@
+package eu.hurion.hello.vaadin;
+
 import com.vaadin.Application;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
@@ -5,7 +7,7 @@ import com.vaadin.ui.Window;
 
 public class HelloHerokuApplication extends Application {
 
-    public static final String HELLO_WORLD = "Hello World!";
+    public static final String HELLO_WORLD = "Hello from Heroku!";
 
     @Override
     public void init() {
