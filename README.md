@@ -21,4 +21,4 @@ Then push the application like this :
 And the application is up and running.
 
 
-As an example, this application is deployed on heroku and accessible at http://electric-meadow-7573.herokuapp.com
+As an example, this application is deployed on heroku and accessible at http://hello-vaadin-heroku.herokuapp.com/

@@ -13,6 +13,7 @@ public class HelloHeroku {
         int httpPort = getPort();
         EmbedVaadin.forApplication(HelloHerokuApplication.class)
                 .withHttpPort(httpPort)
+                .withProductionMode(true)
                 .start();
     }
 
