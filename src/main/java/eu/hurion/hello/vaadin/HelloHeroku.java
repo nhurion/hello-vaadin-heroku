@@ -2,7 +2,9 @@ package eu.hurion.hello.vaadin;
 
 import com.bsb.common.vaadin.embed.support.EmbedVaadin;
 
-
+/**
+ * Command line entry point for the application.
+ */
 public class HelloHeroku {
 
     public static final String PORT = "PORT";
