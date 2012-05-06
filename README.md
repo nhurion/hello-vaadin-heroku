@@ -15,6 +15,14 @@ Not much really.
 * maven-dependency-plugin configured in the pom to copy the dependencies.
 * HelloHeroku class that will launch Tomcat is taking the port from an environment variable. This is how it works on heroku.
 
+Limitations
+-----------
+
+This project doesn't have anything to deal with sessions management and is only constituted of a single module.
+It's working fine for playing around and do some testing, but it's not enough if you plan to use multiple dynos or do a real life application.
+
+If you want something with a little more beaf, check out [vaadin-heroku-multi](https://github.com/nhurion/vaadin-heroku-multi).
+
 Where tho go from here?
 -----------------------
 
@@ -33,7 +41,3 @@ And the application is up and running.
 
 
 As an example, this application is deployed on heroku and accessible at http://hello-vaadin-heroku.herokuapp.com/
-
-Another version of this project using multiple maven modules is available at [vaadin-heroku-multi](https://github.com/nhurion/vaadin-heroku-multi)
-
-Enjoy.
