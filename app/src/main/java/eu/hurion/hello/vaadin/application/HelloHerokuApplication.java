@@ -1,4 +1,4 @@
-package eu.hurion.hello.vaadin;
+package eu.hurion.hello.vaadin.application;
 
 import com.vaadin.Application;
 import com.vaadin.ui.*;
@@ -28,7 +28,7 @@ public class HelloHerokuApplication extends Application {
 
         final Button showButton = new Button(BUTTON_CAPTION, new Button.ClickListener() {
             @Override
-            public void buttonClick(Button.ClickEvent clickEvent) {
+            public void buttonClick(final Button.ClickEvent clickEvent) {
                 getMainWindow().showNotification(
                         HELLO_WORLD + nameInput.getValue() + " !",
                         ""
