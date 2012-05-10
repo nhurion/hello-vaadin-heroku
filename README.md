@@ -12,7 +12,7 @@ What is heroku specific in there?
 * Procfile: Heroku is using [foreman](https://github.com/ddollar/foreman) to launch processes and the Procfile is the file that define the processes.
 * maven-dependency-plugin configured in the pom of the server module to copy the dependencies.
 * Launcher class that will configure the tomcat server based on env variables and launch it.
-* memcached-session-manager: Heroku doesn't allow sticky session and can restart an application at any given time,
+* [memcached-session-manager](http://code.google.com/p/memcached-session-manager/): Heroku doesn't allow sticky session and can restart an application at any given time,
   and it's using [an ephemeral file system](https://devcenter.heroku.com/articles/dyno-isolation#ephemeral_filesystem) .
   For those reasons, session should be stored in another place that is common to all servers and doesn't restart with them.
   Memcached is perfect for that.
