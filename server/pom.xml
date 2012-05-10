@@ -22,6 +22,10 @@
             <groupId>com.bsb.common.vaadin</groupId>
             <artifactId>com.bsb.common.vaadin.embed</artifactId>
         </dependency>
+        <dependency>
+            <groupId>de.javakaffee.msm</groupId>
+            <artifactId>memcached-session-manager-tc7</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
