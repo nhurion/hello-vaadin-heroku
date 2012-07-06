@@ -22,7 +22,10 @@ Where tho go from here?
 
 If you never used heroku before, install the [toolbelt](https://toolbelt.heroku.com/) and [create an account](http://heroku.com/signup).
 
-Just clone this repository and type
+Clone this repository
+    git clone git@github.com:nhurion/hello-vaadin-heroku.git
+
+Create the heroku stack that will receive the application
 
     heroku create --stack cedar
 
