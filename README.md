@@ -31,7 +31,12 @@ Create the heroku stack that will receive the application
 
 Heroku will create your app and give you it's url. You can change it later.
 
-You'll also need to add the memcache add-on.
+You'll also need to add the memcache add-on. In order to add it, you'll have to verify your credit card informations.
+As long as you use the free version of the add-on and you only use one dyno, you won't get charged.
+If you do not want to give your credit card information, edit the server Launcher and remove the configuration of memcached.
+You will only be able to use one dyno, and session will be lost when your dyno is restarted but you'll be able to try heroku.
+
+To add memcache add-on oyu can go to the [heroku interface](https://addons.heroku.com/), or type the following command:
 
     heroku addons:add memcache
 
