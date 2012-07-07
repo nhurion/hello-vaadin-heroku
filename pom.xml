@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <tomcat.version>7.0.26</tomcat.version>
     </properties>
 
@@ -46,7 +47,7 @@
             <dependency>
                 <groupId>de.javakaffee.msm</groupId>
                 <artifactId>memcached-session-manager-tc7</artifactId>
-                <version>1.6.1</version>
+                <version>1.6.2</version>
             </dependency>
 
             <!-- Make tomcat artefacts version consistent between the one used by embed for Vaadin and memecached-session-manager-->
