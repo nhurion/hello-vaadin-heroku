@@ -2,8 +2,12 @@ package eu.hurion.hello.vaadin.application;
 
 import com.vaadin.Application;
 import com.vaadin.ui.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class HelloHerokuApplication extends Application {
+
+    private static final Logger LOG = LoggerFactory.getLogger(HelloHerokuApplication.class);
 
     public static final String HELLO_WORLD = "Hello from Heroku, ";
     public static final String BUTTON_CAPTION = "Click me";
@@ -29,8 +33,10 @@ public class HelloHerokuApplication extends Application {
         final Button showButton = new Button(BUTTON_CAPTION, new Button.ClickListener() {
             @Override
             public void buttonClick(final Button.ClickEvent clickEvent) {
+                final String greeting = HELLO_WORLD + nameInput.getValue() + " !";
+                LOG.debug(greeting);
                 getMainWindow().showNotification(
-                        HELLO_WORLD + nameInput.getValue() + " !",
+                        greeting,
                         ""
                 );
 
