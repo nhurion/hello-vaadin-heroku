@@ -2,19 +2,27 @@ package eu.hurion.hello.vaadin.server;
 
 import com.bsb.common.vaadin.embed.EmbedVaadinConfig;
 import com.bsb.common.vaadin.embed.EmbedVaadinServer;
+import com.bsb.common.vaadin.embed.EmbedVaadinServerBuilder;
 import com.bsb.common.vaadin.embed.application.ApplicationBasedEmbedVaadinTomcat;
-import com.bsb.common.vaadin.embed.application.EmbedVaadinApplication;
 import com.vaadin.Application;
 import de.javakaffee.web.msm.MemcachedBackupSessionManager;
+import eu.hurion.hello.vaadin.application.HelloHerokuApplication;
 import eu.hurion.hello.vaadin.server.MemcachedConfigurator.MemcachedConfiguration;
+
+import java.util.Properties;
 
 /**
  * Customized {@code EmbedVaadinApplication} to accommodate specialities of Heroku.
  *
  * @author Nicolas Hurion
  */
-public class EmbedVaadinForHeroku extends EmbedVaadinApplication {
+public class VaadinForHeroku extends EmbedVaadinServerBuilder<VaadinForHeroku, EmbedVaadinServer> {
 
+    public static final int DEFAULT_PORT = 8080;
+    public static final String PORT = "PORT";
+
+    private final Class<? extends Application> applicationClass;
+    private EmbedVaadinConfig config;
 
     private MemcachedConfigurator memcachedConfigurator;
 
@@ -23,12 +31,24 @@ public class EmbedVaadinForHeroku extends EmbedVaadinApplication {
      *
      * @param applicationClass the class of the application to deploy
      */
-    public EmbedVaadinForHeroku(final Class<? extends Application> applicationClass) {
-        super(applicationClass);
+    public VaadinForHeroku(final Class<? extends Application> applicationClass) {
+        super();
+        assertNotNull(applicationClass, "applicationClass could not be null.");
+        this.applicationClass = applicationClass;
+        withConfigProperties(EmbedVaadinConfig.loadProperties());
+    }
+
+    /**
+     * Returns the {@link Application} type that was used to initialize this instance, if any.
+     *
+     * @return the application class or <tt>null</tt> if a component was set
+     */
+    protected Class<? extends Application> getApplicationClass() {
+        return applicationClass;
     }
 
     @Override
-    protected EmbedVaadinForHeroku self() {
+    protected VaadinForHeroku self() {
         return this;
     }
 
@@ -42,15 +62,26 @@ public class EmbedVaadinForHeroku extends EmbedVaadinApplication {
                 memcahcedConfig);
     }
 
-    public static EmbedVaadinForHeroku forApplication(final Class<? extends Application> applicationClass) {
-        return new EmbedVaadinForHeroku(applicationClass);
+    @Override
+    public final VaadinForHeroku withConfigProperties(final Properties properties) {
+        this.config = new EmbedVaadinConfig(properties);
+        return self();
     }
 
-    public EmbedVaadinForHeroku withMemcachedSessionManager(final MemcachedConfigurator memcachedConfigurator) {
+
+    @Override
+    protected EmbedVaadinConfig getConfig() {
+        return config;
+    }
+
+    public static VaadinForHeroku forApplication(final Class<? extends Application> applicationClass) {
+        return new VaadinForHeroku(applicationClass);
+    }
+
+    public VaadinForHeroku withMemcachedSessionManager(final MemcachedConfigurator memcachedConfigurator) {
         this.memcachedConfigurator = memcachedConfigurator;
         return this;
     }
-
 
     /**
      * An {@link com.bsb.common.vaadin.embed.EmbedVaadinServer} implementation that will configure tomcat to store session in memcached.
@@ -89,5 +120,28 @@ public class EmbedVaadinForHeroku extends EmbedVaadinApplication {
             }
         }
     }
+
+    /**
+     * Application configured for local development.
+     */
+    public static VaadinForHeroku devServer() {
+
+        return VaadinForHeroku.forApplication(HelloHerokuApplication.class).withHttpPort(DEFAULT_PORT)
+                .withProductionMode(false)
+                .openBrowser(true);
+    }
+
+    /**
+     * Application configured to run on heroku servers.
+     */
+    public static VaadinForHeroku prodServer() {
+
+        return VaadinForHeroku.forApplication(HelloHerokuApplication.class)
+                .withMemcachedSessionManager(MemcachedConfigurator.memcacheAddOn())
+                .withHttpPort(Integer.parseInt(System.getenv(PORT)))
+                .withProductionMode(true)
+                .openBrowser(false);
+    }
+
 
 }

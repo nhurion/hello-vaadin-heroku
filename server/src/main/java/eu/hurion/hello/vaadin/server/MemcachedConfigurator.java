@@ -99,4 +99,26 @@ public class MemcachedConfigurator {
         }
     }
 
+    /**
+     * Configuration based on system properties set by the memcacheAddOn
+     */
+    public static MemcachedConfigurator memcacheAddOn() {
+        return memcachedConfig()
+                .username(System.getenv("MEMCACHE_USERNAME"))
+                .password(System.getenv("MEMCACHE_PASSWORD"))
+                .url(System.getenv("MEMCACHE_SERVERS"));
+    }
+
+    /**
+     * Configuration based on system properties set by the memcachierAddOn
+     */
+    public static MemcachedConfigurator memcachierAddOn() {
+        return memcachedConfig()
+                .username(System.getenv("MEMCACHIER_USERNAME"))
+                .password(System.getenv("MEMCACHIER_PASSWORD"))
+                .url(System.getenv("MEMCACHIER_SERVERS"));
+    }
+
+
+
 }
