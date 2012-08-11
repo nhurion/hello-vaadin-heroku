@@ -6,7 +6,6 @@ import com.bsb.common.vaadin.embed.EmbedVaadinServerBuilder;
 import com.bsb.common.vaadin.embed.application.ApplicationBasedEmbedVaadinTomcat;
 import com.vaadin.Application;
 import de.javakaffee.web.msm.MemcachedBackupSessionManager;
-import eu.hurion.hello.vaadin.application.HelloHerokuApplication;
 import eu.hurion.hello.vaadin.server.MemcachedConfigurator.MemcachedConfiguration;
 
 import java.util.Properties;
@@ -122,21 +121,25 @@ public class VaadinForHeroku extends EmbedVaadinServerBuilder<VaadinForHeroku, E
     }
 
     /**
-     * Application configured for local development.
+     * Server configured for local development for the given Application
+     *
+     * @param applicationClass the class of the application to deploy
      */
-    public static VaadinForHeroku devServer() {
+    public static VaadinForHeroku devServer(final Class<? extends Application> applicationClass) {
 
-        return VaadinForHeroku.forApplication(HelloHerokuApplication.class).withHttpPort(DEFAULT_PORT)
+        return VaadinForHeroku.forApplication(applicationClass).withHttpPort(DEFAULT_PORT)
                 .withProductionMode(false)
                 .openBrowser(true);
     }
 
     /**
-     * Application configured to run on heroku servers.
+     * Server configured for Heroku servers for the given Application
+     *
+     * @param applicationClass the class of the application to deploy
      */
-    public static VaadinForHeroku prodServer() {
+    public static VaadinForHeroku prodServer(final Class<? extends Application> applicationClass) {
 
-        return VaadinForHeroku.forApplication(HelloHerokuApplication.class)
+        return VaadinForHeroku.forApplication(applicationClass)
                 .withMemcachedSessionManager(MemcachedConfigurator.memcacheAddOn())
                 .withHttpPort(Integer.parseInt(System.getenv(PORT)))
                 .withProductionMode(true)

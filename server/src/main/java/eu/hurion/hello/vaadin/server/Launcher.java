@@ -1,5 +1,6 @@
 package eu.hurion.hello.vaadin.server;
 
+import eu.hurion.hello.vaadin.application.HelloHerokuApplication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,9 +18,9 @@ public class Launcher {
 
     public static void main(final String[] args) {
         if (devMode()) {
-            devServer().start();
+            devServer(HelloHerokuApplication.class).start();
         } else {
-            prodServer().start();
+            prodServer(HelloHerokuApplication.class).start();
         }
     }
 
