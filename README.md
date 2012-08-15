@@ -12,10 +12,8 @@ What is heroku specific in there?
 * Procfile: Heroku is using [foreman](https://github.com/ddollar/foreman) to launch processes and the Procfile is the file that define the processes.
 * maven-dependency-plugin configured in the pom of the server module to copy the dependencies.
 * Launcher class that will configure the tomcat server based on env variables and launch it.
-* [memcached-session-manager](http://code.google.com/p/memcached-session-manager/): Heroku doesn't allow sticky session and can restart an application at any given time,
-  and it's using [an ephemeral file system](https://devcenter.heroku.com/articles/dyno-isolation#ephemeral_filesystem) .
-  For those reasons, session should be stored in another place that is common to all servers and doesn't restart with them.
-  Memcached is perfect for that.
+* DevLauncher class in test that you can call directly from your IDE to develop faster.
+* Launchers use [vaadin-for-heroku](https://github.com/nhurion/vaadin-for-heroku) which is available through maven central.
 
 Where tho go from here?
 -----------------------
@@ -32,7 +30,7 @@ Create the heroku stack that will receive the application
 
 Heroku will create your app and give you it's url. You can change it later.
 
-You'll also need to add the memcache add-on. In order to add it, you'll have to verify your credit card informations.
+You'll also need to add the memcache add-on. In order to add it, you'll have to verify your credit card information.
 As long as you use the free version of the add-on and you only use one dyno, you won't get charged.
 If you do not want to give your credit card information, edit the server Launcher and remove the configuration of memcached.
 You will only be able to use one dyno, and session will be lost when your dyno is restarted but you'll be able to try heroku.
