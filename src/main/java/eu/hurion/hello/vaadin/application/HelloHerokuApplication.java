@@ -18,7 +18,6 @@ public class HelloHerokuApplication extends Application {
         final Window window = new Window();
         setMainWindow(window);
         window.setContent(buildContent());
-
     }
 
     private ComponentContainer buildContent() {
