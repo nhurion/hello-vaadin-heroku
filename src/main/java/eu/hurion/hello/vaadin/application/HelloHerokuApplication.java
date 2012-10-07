@@ -34,11 +34,7 @@ public class HelloHerokuApplication extends Application {
             public void buttonClick(final Button.ClickEvent clickEvent) {
                 final String greeting = HELLO_WORLD + nameInput.getValue() + " !";
                 LOG.debug(greeting);
-                getMainWindow().showNotification(
-                        greeting,
-                        ""
-                );
-
+                getMainWindow().showNotification(greeting, "");
             }
         });
         formLayout.addComponent(showButton);
