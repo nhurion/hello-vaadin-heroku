@@ -42,9 +42,8 @@
             <dependency>
                 <groupId>eu.hurion.vaadin.heroku</groupId>
                 <artifactId>vaadin-for-heroku</artifactId>
-                <version>0.3</version>
+                <version>0.4</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 
@@ -98,5 +97,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
 </project>
