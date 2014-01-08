@@ -47,3 +47,7 @@ And the application is up and running.
 
 
 As an example, this application is deployed on heroku and accessible at http://hello-vaadin-heroku.herokuapp.com/
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/nhurion/hello-vaadin-heroku/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
